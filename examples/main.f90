@@ -152,7 +152,7 @@ subroutine field_file_write(myrank, nprocs, theta_sub)
     do k=1,nz_sub-1
         do j=1,ny_sub-1
             do i=1,nx_sub-1
-                write(myrank,'(3D20.10,1D30.20)') X_sub(i), Y_sub(j), Z_sub(k), theta_sub(i,j,k)
+                write(myrank,'(3D14.6,1E22.14)') X_sub(i), Y_sub(j), Z_sub(k), theta_sub(i,j,k)
             enddo
         enddo
     enddo
@@ -238,7 +238,7 @@ subroutine field_file_write(myrank, nprocs, theta_sub)
         do k = 1, nzm
             do j = 1, nym
                 do i = 1, nxm
-                    write(myrank,'(3D20.10,1E30.20)') dx*dble(i-1),dy*dble(j-1),dz*dble(k-1),theta_all(i,j,k)
+                    write(myrank,'(3D14.6,1E22.14)') dx*dble(i-1),dy*dble(j-1),dz*dble(k-1),theta_all(i,j,k)
                 enddo
             enddo
         enddo
