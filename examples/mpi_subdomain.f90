@@ -9,10 +9,10 @@
 !>              - Ji-Hoon Kang (jhkang@kisti.re.kr), Korea Institute of Science and Technology Information
 !>              - Jung-Il Choi (jic@yonsei.ac.kr), Department of Computational Science & Engineering, Yonsei University
 !>
-!> @date        June 2019
-!> @version     1.0
+!> @date        March 2023
+!> @version     2.0
 !> @par         Copyright
-!>              Copyright (c) 2019 Kiha Kim and Jung-Il choi, Yonsei University and 
+!>              Copyright (c) 2019-2023 Kiha Kim and Jung-Il choi, Yonsei University and 
 !>              Ji-Hoon Kang, Korea Institute of Science and Technology Information, All rights reserved.
 !> @par         License     
 !>              This project is release under the terms of the MIT License (see LICENSE in )
@@ -310,7 +310,8 @@ module mpi_subdomain
         ! For boundary grids in the x-direction. The same grid length is used due to periodic boundary conditions.
         if(myrank_in_x == 0) then
             dmx_sub(0)= dx
-        else if(myrank_in_x == nprocs_in_x-1) then
+	endif
+        if(myrank_in_x == nprocs_in_x-1) then
             dmx_sub(nx_sub)=dx
         endif
 
@@ -318,14 +319,16 @@ module mpi_subdomain
         if(myrank_in_y == 0) then
             y_sub(0) = 0.0d0
             dmy_sub(0)=dy/2.0d0
-        else if(myrank_in_y == nprocs_in_y-1) then
+	endif
+        if(myrank_in_y == nprocs_in_y-1) then
             dmy_sub(ny_sub)=dy/2.0d0
         endif 
     
         ! For boundary grids in the z-direction. The same grid length is used due to periodic boundary conditions.
         if(myrank_in_z == 0) then
             dmz_sub(0)=dz
-        else if(myrank_in_z == nprocs_in_z-1) then
+	endif
+        if(myrank_in_z == nprocs_in_z-1) then
             dmz_sub(nz_sub)=dz
         endif
     
@@ -344,7 +347,6 @@ module mpi_subdomain
         integer, intent(in) :: myrank_in_y, nprocs_in_y
         double precision, intent(inout) :: theta_sub(0:nx_sub, 0:ny_sub, 0:nz_sub)
     
-        double precision, parameter :: PI = acos(-1.d0)
         integer :: i,j,k
 
         ! Initialize the main variable with a sine function and linearly changed values between the wall boundaries.
@@ -383,32 +385,32 @@ module mpi_subdomain
     
         integer :: i,k
 
-        ! Lower boundary subdomain: Assign lower boundary condition to the boundary variables.
+        ! Normal subdomain: Assign values of ghostcells to the boundary variables.
+		do k = 0, nz_sub
+			do i = 0, nx_sub
+				thetaBC3_sub(i,k) = theta_sub(i,    0,k)
+				thetaBC4_sub(i,k) = theta_sub(i,ny_sub,k)
+			end do
+		end do  
+
+		! Lower boundary subdomain: Assign lower boundary condition to the boundary variables.
         if(myrank_in_y==0) then
             do k = 0, nz_sub
                 do i = 0, nx_sub
                     thetaBC3_sub(i,k) = theta_hot
-                    thetaBC4_sub(i,k) = theta_sub(i,ny_sub,k)
                 end do
             end do  
-        ! Upper boundary subdomain: Assign upper boundary condition to the boundary variables.
-        else if(myrank_in_y==nprocs_in_y-1) then
+		endif
+
+		! Upper boundary subdomain: Assign upper boundary condition to the boundary variables.
+        if(myrank_in_y==nprocs_in_y-1) then
             do k = 0, nz_sub
                 do i = 0, nx_sub
-                    thetaBC3_sub(i,k) = theta_sub(i,0,k)
                     thetaBC4_sub(i,k) = theta_cold
                 end do
             end do
-        ! Normal subdomain: Assign values of ghostcells to the boundary variables.
-        else
-            do k = 0, nz_sub
-                do i = 0, nx_sub
-                    thetaBC3_sub(i,k) = theta_sub(i,    0,k)
-                    thetaBC4_sub(i,k) = theta_sub(i,ny_sub,k)
-                end do
-            end do  
-        endif
-    
+		endif
+
         return    
     end subroutine mpi_subdomain_boundary
     

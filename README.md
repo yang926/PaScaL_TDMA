@@ -1,4 +1,4 @@
-# PaScaL_TDMA
+# PaScaL_TDMA 2.0
 
 Parallel and Scalable Library for TriDiagonal Matrix Algorithm
 
@@ -20,10 +20,61 @@ This library is for both single and many tridiagonal systems of equations. The m
     
 Step 1 and Step 5 are similar to the method proposed by Laszlo et al.(2016) which uses parallel cyclic reduction (PCR) algorithm to build and solve the reduced tridiagonal systems. Instead of using the PCR, we develop an all-to-all communication scheme using the MPI_Ialltoall function after the modified Thomas algorithm is executed. The number of coefficients for the reduced tridiagonal systems are greatly reduced, so we can avoid the communication bandwidth problem, which is a main bottleneck for all-to-all communications. Our algorithm is also distinguished from the work of Mattor et al. (1995) which assembles the undetermined coefficients of the temporary solutions in a single processor using MPI_Gather, where load imbalances are serious.
 
+
+# CUDA implementation in PaScal_TDMA 2.0
+In PaScaL_TDMA 2.0, multi-GPU acceleration is implemented using NVIDIA CUDA. CUDA-related features are as follows:
+- (1) Incorporation of CUDA kernels into the loop structures of the existing algorithm, that are modified to exploit more GPU threads.
+- (2) Utilization of shared memory using pipeline copy of variables in device memory to reduce the amount of device memory access.
+- (3) CUDA-aware MPI communication for rapid communication with the support of hardward
+
+
+
 # Authors
 - Kiha Kim (k-kiha@yonsei.ac.kr), Multi-Physics Modeling and Computation Lab., Yonsei University
+- Mingyu Yang (yang926@yonsei.ac.kr), Multi-Physics Modeling and Computation Lab., Yonsei University
 - Ji-Hoon Kang (jhkang@kisti.re.kr), Korea Institute of Science and Technology Information
 - Jung-Il Choi (jic@yonsei.ac.kr), Multi-Physics Modeling and Computation Lab., Yonsei University
+
+
+# Usage
+## Downloading CaNS
+The repository can be cloned as follows:
+
+```
+git clone https://github.com/MPMC-Lab/PaScaL_TDMA.git
+```
+Alternatively, the source files can be downloaded through github menu 'Download ZIP'.
+
+## Compile
+### Prerequisites
+Prerequisites to compile PaScaL_TDMAS are as follows:
+	* MPI
+	* 'nvfortran' (for GPU runs)
+
+### Compile and build
+* Build PaScaL_TDMA
+    ```
+	make lib
+	```
+* Build an example problem after build PaScaL_TDMA
+
+    ```
+	make example
+	```
+* Build all
+
+    ```
+	make all
+	```
+### Mores on compile option
+The `Makefile` in root directory is to compile the source code, and is expected to work for most systems. The 'Makefile.inc' file in the root directory can be used to change the compiler (and MPI wrapper) and a few pre-defined compile options depending on compiler, execution environment and et al.
+
+## Running the example
+After building the example file, an executable binary, `a.out`, is built in the `run` folder. The `PARA_INPUT.inp` file in the `run` folder is a pre-defined input file, and the `a.out` can be executed as follows:
+    ```
+	mpirun -np 8 ./a.out ./PARA_INPUT.inp
+    ```
+
 
 # Cite
 Please use the following bibtex, when you refer to this project.

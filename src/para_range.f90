@@ -9,7 +9,7 @@
 !> @date        June 2019
 !> @version     1.0
 !> @par         Copyright
-!>              Copyright (c) 2019 Kiha Kim and Jung-Il choi, Yonsei University and 
+!>              Copyright (c) 2019-2023 Kiha Kim and Jung-Il choi, Yonsei University and 
 !>              Ji-Hoon Kang, Korea Institute of Science and Technology Information, All rights reserved.
 !> @par         License     
 !>              This project is release under the terms of the MIT License (see LICENSE in )
