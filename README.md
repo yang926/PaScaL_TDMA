@@ -50,8 +50,8 @@ Alternatively, the source files can be downloaded through github menu 'Download 
 ## Compile
 ### Prerequisites
 Prerequisites to compile PaScaL_TDMAS are as follows:
-	* MPI
-	* fortran compiler (`nvfortran for GPU runs, NVIDIA HPC SKD 21.1 or higher)
+* MPI
+* fortran compiler (`nvfortran for GPU runs, NVIDIA HPC SKD 21.1 or higher)
 
 ### Compile and build
 * Build PaScaL_TDMA
