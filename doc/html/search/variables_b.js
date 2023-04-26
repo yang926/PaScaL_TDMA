@@ -3,7 +3,7 @@ var searchData=
   ['n_5frow_5frt',['n_row_rt',['../structpascal__tdma_1_1ptdma__plan__many.html#ad94248e2aa0653f151f0575d62d6fff7',1,'pascal_tdma::ptdma_plan_many::n_row_rt()'],['../structpascal__tdma_1_1ptdma__plan__single.html#a91fd8fb919f9b7d3137b13fcaa55dc1b',1,'pascal_tdma::ptdma_plan_single::n_row_rt()']]],
   ['n_5fsys_5frt',['n_sys_rt',['../structpascal__tdma_1_1ptdma__plan__many.html#a22b42947ab742f83aad3bbeb3a42a0f6',1,'pascal_tdma::ptdma_plan_many']]],
   ['np_5fdim',['np_dim',['../namespacempi__topology.html#ac837e97cb4896a72d94eb7a9f12d6682',1,'mpi_topology']]],
-  ['nprocs',['nprocs',['../structmpi__topology_1_1cart__comm__1d.html#adf78d1be6ca59cada6cc444edde4c3fc',1,'mpi_topology::cart_comm_1d']]],
+  ['nprocs',['nprocs',['../structmpi__topology_1_1cart__comm__1d.html#adf78d1be6ca59cada6cc444edde4c3fc',1,'mpi_topology::cart_comm_1d::nprocs()'],['../structpascal__tdma_1_1ptdma__plan__many.html#aefad054b588906989c2fdfc5ef9cb6d4',1,'pascal_tdma::ptdma_plan_many::nprocs()'],['../structpascal__tdma_1_1ptdma__plan__single.html#ad37699922fd3eb9c8ef7c42a60583dc7',1,'pascal_tdma::ptdma_plan_single::nprocs()']]],
   ['nu',['nu',['../namespaceglobal.html#a48babc9c7f07053917ca1392e7a7b721',1,'global']]],
   ['nx',['nx',['../namespaceglobal.html#a4ba10a6dbbcebb68e0d5e36a6c291898',1,'global']]],
   ['nx_5fsub',['nx_sub',['../namespacempi__subdomain.html#a005fe127fe0fc85b932814a820a36444',1,'mpi_subdomain']]],

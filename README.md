@@ -26,6 +26,8 @@ In PaScaL_TDMA 2.0, multi-GPU acceleration is implemented using NVIDIA CUDA. CUD
 - (1) Incorporation of CUDA kernels into the loop structures of the existing algorithm, that are modified to exploit more GPU threads.
 - (2) Utilization of shared memory using pipeline copy of variables in device memory to reduce the amount of device memory access.
 - (3) CUDA-aware MPI communication for rapid communication with the support of hardward
+- (4) Use of 3D-array for practical applications and accordingly the use of CUDA threads more than in a single dimension with the 3-D array.
+- (5) Depreciation on functions for single tridiagonal matrix as they are rarely used for three-dimensional problems.
 
 
 
@@ -37,7 +39,7 @@ In PaScaL_TDMA 2.0, multi-GPU acceleration is implemented using NVIDIA CUDA. CUD
 
 
 # Usage
-## Downloading CaNS
+## Downloading PaScaL_TDMA
 The repository can be cloned as follows:
 
 ```
@@ -49,7 +51,7 @@ Alternatively, the source files can be downloaded through github menu 'Download 
 ### Prerequisites
 Prerequisites to compile PaScaL_TDMAS are as follows:
 	* MPI
-	* 'nvfortran' (for GPU runs)
+	* fortran compiler (`nvfortran for GPU runs, NVIDIA HPC SKD 21.1 or higher)
 
 ### Compile and build
 * Build PaScaL_TDMA
@@ -75,6 +77,13 @@ After building the example file, an executable binary, `a.out`, is built in the 
 	mpirun -np 8 ./a.out ./PARA_INPUT.inp
     ```
 
+# Folder structure
+* `src` : source files of PaScaL_TDMA_CUDA.
+* `example` : source files of an example problem for 3D heat-transfer equation.
+* `include` : header files are created after building
+* `lib` : a static library of PaScaL_TDMA_CUDA is are created after building
+* `doc` : documentation
+* `run` : an executable binary file for the example problem is created after building.
 
 # Cite
 Please use the following bibtex, when you refer to this project.

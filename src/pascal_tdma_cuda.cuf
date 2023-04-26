@@ -48,7 +48,7 @@ module PaScaL_TDMA_cuda
         private
 
         integer :: ptdma_world      !< Single dimensional subcommunicator to assemble data for the reduced TDMA
-        integer :: ptdma_nprocs     !< Size of ptdma_world
+        integer :: nprocs     		!< Communicator size of ptdma_world
 
         integer :: nx_sys           !< Number of tridiagonal systems of equations in x-direction per process
         integer :: ny_sys           !< Number of tridiagonal systems of equations in y-direction per process
@@ -128,7 +128,7 @@ module PaScaL_TDMA_cuda
         p%ny_sys        = ny_sys
         p%nz_row        = nz_row
         p%ptdma_world   = mpi_world
-        p%ptdma_nprocs  = nprocs
+        p%nprocs  = nprocs
     
         ! Specify dimensions for reduced systems.
         nx_sys_rd = nx_sys
@@ -148,7 +148,7 @@ module PaScaL_TDMA_cuda
         p%nz_row_rd     = nz_row_rd
 
         ! Allocate coefficient arrays.
-        if(p%ptdma_nprocs.eq.1) then
+        if(p%nprocs.eq.1) then
             allocate( p%e_buff(nx_sys, ny_sys, nz_row) );  p%e_buff = 0.0d0
         else
             allocate( p%a_rd_d(nx_sys_rd, ny_sys, nz_row_rd) );  p%a_rd_d  = 0.0d0
@@ -209,7 +209,7 @@ module PaScaL_TDMA_cuda
 
         type(ptdma_plan_many_cuda), intent(inout)  :: p
 
-        if(p%ptdma_nprocs.eq.1) then
+        if(p%nprocs.eq.1) then
             deallocate(p%e_buff) 
         else
             deallocate(p%a_rd_d, p%b_rd_d, p%c_rd_d, p%d_rd_d)
@@ -235,7 +235,7 @@ module PaScaL_TDMA_cuda
         double precision, device, intent(inout)     :: a_d(:, :, :), b_d(:, :, :)
         double precision, device, intent(inout)     :: c_d(:, :, :), d_d(:, :, :)
 
-        if(p%ptdma_nprocs.eq.1) then
+        if(p%nprocs.eq.1) then
             ! Solve the tridiagonal system directly when nprocs = 1. 
             ! The size of shared memory is specified using shared_buffer_size
             call tdma_many_cuda <<<p%blocks, p%threads, 6*p%shared_buffer_size>>> & ! 6 * 8 byte ?
@@ -284,7 +284,7 @@ module PaScaL_TDMA_cuda
         double precision, device, intent(inout)     :: a_d(:, :, :), b_d(:, :, :)
         double precision, device, intent(inout)     :: c_d(:, :, :), d_d(:, :, :)
 
-        if(p%ptdma_nprocs.eq.1) then
+        if(p%nprocs.eq.1) then
             ! Solve the cyclic tridiagonal system directly when nprocs = 1. 
             ! The size of shared memory is specified using shared_buffer_size
             call tdma_cycl_many_cuda<<<p%blocks, p%threads, 8*p%shared_buffer_size>>> &
@@ -536,10 +536,10 @@ module PaScaL_TDMA_cuda
         integer  :: nblksize
         integer  :: ierr
   
-        nblksize = p%nx_sys * p%ny_sys * p%nz_row_rd / p%ptdma_nprocs
+        nblksize = p%nx_sys * p%ny_sys * p%nz_row_rd / p%nprocs
 
         call mem_detach_slab_xy <<<p%blocks_alltoall, p%threads>>> &
-                                (slab_xy, p%sendbuf, p%nx_sys, p%ny_sys, p%nz_row_rd, p%ptdma_nprocs)
+                                (slab_xy, p%sendbuf, p%nx_sys, p%ny_sys, p%nz_row_rd, p%nprocs)
 
         !----- alltoall communication of sbuf to rbuf
         ierr = cudaStreamSynchronize()
@@ -548,7 +548,7 @@ module PaScaL_TDMA_cuda
                           p%ptdma_world, ierr)
 
         call mem_unite_slab_yz<<<p%blocks_alltoall, p%threads>>> &
-                                (p%recvbuf, slab_yz, p%nx_sys, p%ny_sys, p%nz_row_rd, p%ptdma_nprocs)
+                                (p%recvbuf, slab_yz, p%nx_sys, p%ny_sys, p%nz_row_rd, p%nprocs)
   
     end subroutine transpose_slab_xy_to_yz
 
@@ -642,10 +642,10 @@ module PaScaL_TDMA_cuda
         integer  :: nblksize
         integer  :: ierr
   
-        nblksize   = p%nx_sys * p%ny_sys * p%nz_row_rd / p%ptdma_nprocs
+        nblksize   = p%nx_sys * p%ny_sys * p%nz_row_rd / p%nprocs
 
         call mem_detach_slab_yz<<<p%blocks_alltoall, p%threads>>> &
-                                (slab_yz, p%sendbuf, p%nx_sys, p%ny_sys, p%nz_row_rd, p%ptdma_nprocs)
+                                (slab_yz, p%sendbuf, p%nx_sys, p%ny_sys, p%nz_row_rd, p%nprocs)
 
         !----- alltoall communication of sendbuf to recvbuf
         ierr = cudaStreamSynchronize()
@@ -654,7 +654,7 @@ module PaScaL_TDMA_cuda
                           p%ptdma_world, ierr)
 
         call mem_unite_slab_xy<<<p%blocks_alltoall, p%threads>>> &
-                                (p%recvbuf, slab_xy, p%nx_sys, p%ny_sys, p%nz_row_rd, p%ptdma_nprocs)
+                                (p%recvbuf, slab_xy, p%nx_sys, p%ny_sys, p%nz_row_rd, p%nprocs)
 
     end subroutine transpose_slab_yz_to_xy
 

@@ -11,7 +11,11 @@ PTDMA  = $(OBJDIR)/pascal_tdma.o
 TDMAS_CUDA = $(OBJDIR)/tdmas_cuda.o
 PTDMA_CUDA  = $(OBJDIR)/pascal_tdma_cuda.o
 
-OBJS   = $(RANGE) $(TDMAS) $(PTDMA) $(TDMAS_CUDA) $(PTDMA_CUDA)
+OBJS   = $(RANGE) $(TDMAS) $(PTDMA)
+
+ifdef USE_CUDA
+    OBJS += $(TDMAS_CUDA) $(PTDMA_CUDA)
+endif
 
 all: $(LIB) inc
 

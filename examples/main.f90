@@ -27,10 +27,10 @@ program main
     use global
     use mpi_subdomain
     use mpi_topology
-	use solve_theta
+    use solve_theta
 
 #ifdef _CUDA
-	use cudafor
+    use cudafor
     use solve_theta, only : solve_theta_plan_many_cuda
     use nvtx
 #else
@@ -47,7 +47,7 @@ program main
     integer :: local_rank, pvd, istat, nDevices
 #endif
 
-	call MPI_Init(ierr)
+    call MPI_Init(ierr)
     call MPI_Comm_size( MPI_COMM_WORLD, nprocs, ierr)
     call MPI_Comm_rank( MPI_COMM_WORLD, myrank, ierr)
     
@@ -97,9 +97,9 @@ program main
     if(myrank==0) write(*,*) '[Main] Solving the 3D heat equation! '
 
 #ifdef _CUDA
-	call solve_theta_plan_many_cuda(theta_sub)
+    call solve_theta_plan_many_cuda(theta_sub)
 #else
-	call solve_theta_plan_many(theta_sub)
+    call solve_theta_plan_many(theta_sub)
 #endif
  
     if(myrank==0) write(*,*) '[Main] Solving the 3D heat equation complete! '
