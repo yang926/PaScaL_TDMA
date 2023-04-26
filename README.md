@@ -32,7 +32,7 @@ In PaScaL_TDMA 2.0, multi-GPU acceleration is implemented using NVIDIA CUDA. CUD
 
 
 # Authors
-- Kiha Kim (k-kiha@yonsei.ac.kr), Multi-Physics Modeling and Computation Lab., Yonsei University
+- Ki-Ha Kim (k-kiha@yonsei.ac.kr), Multi-Physics Modeling and Computation Lab., Yonsei University
 - Mingyu Yang (yang926@yonsei.ac.kr), Multi-Physics Modeling and Computation Lab., Yonsei University
 - Ji-Hoon Kang (jhkang@kisti.re.kr), Korea Institute of Science and Technology Information
 - Jung-Il Choi (jic@yonsei.ac.kr), Multi-Physics Modeling and Computation Lab., Yonsei University
@@ -90,7 +90,7 @@ Please use the following bibtex, when you refer to this project.
 
     @article{kkpc2020,
         title = "PaScaL_TDMA: A library of parallel and scalable solvers for massive tridiagonal system",
-        author = "Kim, Kiha and Kang, Ji-Hoon and Pan, Xiaomin and Choi, Jung-Il",
+        author = "Kim, Ki-Ha and Kang, Ji-Hoon and Pan, Xiaomin and Choi, Jung-Il",
         journal = "Computer Physics Communications",
         volume = "260",
         pages = "107722",
@@ -101,7 +101,7 @@ Please use the following bibtex, when you refer to this project.
 
     @misc{PaScaL_TDMA2019,
         title  = "Parallel and Scalable Library for TriDiagonal Matrix Algorithm",
-        author = "Kim, Kiha and Kang, Ji-Hoon and Choi, Jung-Il",
+        author = "Kim, Ki-Ha and Kang, Ji-Hoon and Choi, Jung-Il",
         url    = "https://github.com/MPMC-Lab/PaScaL_TDMA",
         year   = "2019"
     }

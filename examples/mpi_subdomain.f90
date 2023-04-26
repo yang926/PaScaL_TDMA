@@ -310,16 +310,15 @@ module mpi_subdomain
         ! For boundary grids in the x-direction. The same grid length is used due to periodic boundary conditions.
         if(myrank_in_x == 0) then
             dmx_sub(0)= dx
-	endif
+        endif
         if(myrank_in_x == nprocs_in_x-1) then
             dmx_sub(nx_sub)=dx
         endif
 
         ! For boundary grids in the y-direction. Half grid length is used for lower and upper boundary grids.
         if(myrank_in_y == 0) then
-            y_sub(0) = 0.0d0
             dmy_sub(0)=dy/2.0d0
-	endif
+        endif
         if(myrank_in_y == nprocs_in_y-1) then
             dmy_sub(ny_sub)=dy/2.0d0
         endif 
@@ -327,7 +326,7 @@ module mpi_subdomain
         ! For boundary grids in the z-direction. The same grid length is used due to periodic boundary conditions.
         if(myrank_in_z == 0) then
             dmz_sub(0)=dz
-	endif
+        endif
         if(myrank_in_z == nprocs_in_z-1) then
             dmz_sub(nz_sub)=dz
         endif
