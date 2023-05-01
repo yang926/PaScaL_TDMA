@@ -39,6 +39,7 @@ In PaScaL_TDMA 2.0, multi-GPU acceleration is implemented using NVIDIA CUDA. CUD
 ### v2.0
 - Mingyu Yang (yang926@yonsei.ac.kr), Multi-Physics Modeling and Computation Lab., Yonsei University
 - Ji-Hoon Kang (jhkang@kisti.re.kr), Korea Institute of Science and Technology Information
+- Ki-Ha Kim (k-kiha@yonsei.ac.kr), Multi-Physics Modeling and Computation Lab., Yonsei University
 - Jung-Il Choi (jic@yonsei.ac.kr), Multi-Physics Modeling and Computation Lab., Yonsei Universit
 
 # Usage
