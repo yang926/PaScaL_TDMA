@@ -2,6 +2,7 @@
 !> @file        tdmas_cuda.cuf
 !> @brief       CUDA version of tridiagonal matrix (TDM) solvers using the Thomas algorithm.
 !> @details     A single TDM solver and many TDM solver with non-cyclic and cyclic conditions.
+!>
 !> @author      
 !>              - Mingyu Yang (yang926@yonsei.ac.kr), Multi-Physics Modeling and Computation Lab., Yonsei University
 !>              - Ji-Hoon Kang (jhkang@kisti.re.kr), Korea Institute of Science and Technology Information

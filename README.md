@@ -2,7 +2,7 @@
 
 Parallel and Scalable Library for TriDiagonal Matrix Algorithm
 
-PaScal_TDMA provides an efficient and scalable computational procedure to solve many tridiagonal systems in multi-dimensional partial differential equations. The modified Thomas algorithm proposed by Laszlo et al.(2016) and the newly designed communication scheme have been used to reduce the communication overhead in solving many tridiagonal systems.
+PaScaL_TDMA provides an efficient and scalable computational procedure to solve many tridiagonal systems in multi-dimensional partial differential equations. The modified Thomas algorithm proposed by Laszlo et al.(2016) and the newly designed communication scheme have been used to reduce the communication overhead in solving many tridiagonal systems.
 
 This library is for both single and many tridiagonal systems of equations. The main algorithm for a tridiagonal matrix consists of the following five steps: 
 
@@ -21,7 +21,7 @@ This library is for both single and many tridiagonal systems of equations. The m
 Step 1 and Step 5 are similar to the method proposed by Laszlo et al.(2016) which uses parallel cyclic reduction (PCR) algorithm to build and solve the reduced tridiagonal systems. Instead of using the PCR, we develop an all-to-all communication scheme using the MPI_Ialltoall function after the modified Thomas algorithm is executed. The number of coefficients for the reduced tridiagonal systems are greatly reduced, so we can avoid the communication bandwidth problem, which is a main bottleneck for all-to-all communications. Our algorithm is also distinguished from the work of Mattor et al. (1995) which assembles the undetermined coefficients of the temporary solutions in a single processor using MPI_Gather, where load imbalances are serious.
 
 
-# CUDA implementation in PaScal_TDMA 2.0
+# CUDA implementation in PaScaL_TDMA 2.0
 In PaScaL_TDMA 2.0, multi-GPU acceleration is implemented using NVIDIA CUDA. CUDA-related features are as follows:
 - (1) Incorporation of CUDA kernels into the loop structures of the existing algorithm, that are modified to exploit more GPU threads.
 - (2) Utilization of shared memory using pipeline copy of variables in device memory to reduce the amount of device memory access.
@@ -30,10 +30,9 @@ In PaScaL_TDMA 2.0, multi-GPU acceleration is implemented using NVIDIA CUDA. CUD
 - (5) Depreciation on functions for single tridiagonal matrix as they are rarely used for three-dimensional problems.
 
 
-
 # Authors
-- Ki-Ha Kim (k-kiha@yonsei.ac.kr), Multi-Physics Modeling and Computation Lab., Yonsei University
-- Mingyu Yang (yang926@yonsei.ac.kr), Multi-Physics Modeling and Computation Lab., Yonsei University
+- Ki-Ha Kim (k-kiha@yonsei.ac.kr), Main developer of v1.0, Multi-Physics Modeling and Computation Lab., Yonsei University
+- Mingyu Yang (yang926@yonsei.ac.kr), Main developer of v2.0, Multi-Physics Modeling and Computation Lab., Yonsei University
 - Ji-Hoon Kang (jhkang@kisti.re.kr), Korea Institute of Science and Technology Information
 - Jung-Il Choi (jic@yonsei.ac.kr), Multi-Physics Modeling and Computation Lab., Yonsei University
 

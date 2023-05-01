@@ -2,13 +2,14 @@
 !> @file        tdmas.f90
 !> @brief       Tridiagonal matrix (TDM) solvers using the Thomas algorithm.
 !> @details     A single TDM solver and many TDM solver with non-cyclic and cyclic conditions.
+!>
 !> @author      
 !>              - Kiha Kim (k-kiha@yonsei.ac.kr), Department of Computational Science & Engineering, Yonsei University
 !>              - Ji-Hoon Kang (jhkang@kisti.re.kr), Korea Institute of Science and Technology Information
 !>              - Jung-Il Choi (jic@yonsei.ac.kr), Department of Computational Science & Engineering, Yonsei University
 !>
-!> @date        March 2023
-!> @version     2.0
+!> @date        June 2019
+!> @version     1.0
 !> @par         Copyright
 !>              Copyright (c) 2019-2023 Kiha Kim and Jung-Il choi, Yonsei University and 
 !>              Ji-Hoon Kang, Korea Institute of Science and Technology Information, All rights reserved.

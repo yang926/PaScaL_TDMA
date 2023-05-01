@@ -4,10 +4,11 @@
 !> @details     The target example problem is the three-dimensional time-dependent heat conduction problem 
 !>              in a unit cube domain applied with the boundary conditions of vertically constant temperature 
 !>              and horizontally periodic boundaries.
+!>
 !> @author      
 !>              - Kiha Kim (k-kiha@yonsei.ac.kr), Department of Computational Science & Engineering, Yonsei University
-!>              - Ji-Hoon Kang (jhkang@kisti.re.kr), Korea Institute of Science and Technology Information
 !>              - Mingyu Yang (yang926@yonsei.ac.kr), Multi-Physics Modeling and Computation Lab., Yonsei University
+!>              - Ji-Hoon Kang (jhkang@kisti.re.kr), Korea Institute of Science and Technology Information
 !>              - Jung-Il Choi (jic@yonsei.ac.kr), Department of Computational Science & Engineering, Yonsei University
 !>
 !> @date        March 2023
