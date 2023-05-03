@@ -6,18 +6,18 @@
 !>              and horizontally periodic boundaries.
 !>
 !> @author      
-!>              - Kiha Kim (k-kiha@yonsei.ac.kr), Department of Computational Science & Engineering, Yonsei University
-!>              - Mingyu Yang (yang926@yonsei.ac.kr), Multi-Physics Modeling and Computation Lab., Yonsei University
+!>              - Ki-Ha Kim (k-kiha@yonsei.ac.kr), School of Mathematics and Computing (Computational Science and Engineering), Yonsei University
+!>              - Mingyu Yang (yang926@yonsei.ac.kr), School of Mathematics and Computing (Computational Science and Engineering), Yonsei University
 !>              - Ji-Hoon Kang (jhkang@kisti.re.kr), Korea Institute of Science and Technology Information
-!>              - Jung-Il Choi (jic@yonsei.ac.kr), Department of Computational Science & Engineering, Yonsei University
+!>              - Jung-Il Choi (jic@yonsei.ac.kr), School of Mathematics and Computing (Computational Science and Engineering), Yonsei University
 !>
-!> @date        March 2023
+!> @date        May 2023
 !> @version     2.0
 !> @par         Copyright
-!>              Copyright (c) 2019-2023 Kiha Kim, Mingyu Yang and Jung-Il choi, Yonsei University and 
+!>              Copyright (c) 2019-2023 Ki-Ha Kim, Mingyu Yang and Jung-Il choi, Yonsei University and 
 !>              Ji-Hoon Kang, Korea Institute of Science and Technology Information, All rights reserved.
 !> @par         License     
-!>              This project is release under the terms of the MIT License (see LICENSE in )
+!>              This project is release under the terms of the MIT License (see LICENSE file).
 !======================================================================================================================
 
 module solve_theta

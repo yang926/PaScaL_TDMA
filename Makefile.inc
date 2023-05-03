@@ -28,7 +28,6 @@ FLAG += -tp=skylake
 ###############################################################################
 
 USE_CUDA = yes
-FLAG += -D_CUDA 
 FLAG += -mp:multicore -Mcuda -Minfo=accel 
 #FLAG += -DUSE_NVTX
 

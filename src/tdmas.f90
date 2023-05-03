@@ -4,17 +4,17 @@
 !> @details     A single TDM solver and many TDM solver with non-cyclic and cyclic conditions.
 !>
 !> @author      
-!>              - Kiha Kim (k-kiha@yonsei.ac.kr), Department of Computational Science & Engineering, Yonsei University
+!>              - Ki-Ha Kim (k-kiha@yonsei.ac.kr), School of Mathematics and Computing (Computational Science and Engineering), Yonsei University
 !>              - Ji-Hoon Kang (jhkang@kisti.re.kr), Korea Institute of Science and Technology Information
-!>              - Jung-Il Choi (jic@yonsei.ac.kr), Department of Computational Science & Engineering, Yonsei University
+!>              - Jung-Il Choi (jic@yonsei.ac.kr), School of Mathematics and Computing (Computational Science and Engineering), Yonsei University
 !>
-!> @date        June 2019
-!> @version     1.0
+!> @date        May 2023
+!> @version     2.0
 !> @par         Copyright
-!>              Copyright (c) 2019-2023 Kiha Kim and Jung-Il choi, Yonsei University and 
+!>              Copyright (c) 2019-2023 Ki-Ha Kim and Jung-Il choi, Yonsei University and 
 !>              Ji-Hoon Kang, Korea Institute of Science and Technology Information, All rights reserved.
 !> @par         License     
-!>              This project is release under the terms of the MIT License (see LICENSE in )
+!>              This project is release under the terms of the MIT License (see LICENSE file).
 !======================================================================================================================
 
 !>

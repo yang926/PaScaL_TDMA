@@ -32,15 +32,15 @@ In PaScaL_TDMA 2.0, multi-GPU acceleration is implemented using NVIDIA CUDA. CUD
 
 # Authors
 ### v1.0
-- Ki-Ha Kim (k-kiha@yonsei.ac.kr), Multi-Physics Modeling and Computation Lab., Yonsei University
+- Ki-Ha Kim (k-kiha@yonsei.ac.kr), School of Mathematics and Computing (Computational Science and Engineering), Yonsei University
 - Ji-Hoon Kang (jhkang@kisti.re.kr), Korea Institute of Science and Technology Information
-- Jung-Il Choi (jic@yonsei.ac.kr), Multi-Physics Modeling and Computation Lab., Yonsei University
+- Jung-Il Choi (jic@yonsei.ac.kr), School of Mathematics and Computing (Computational Science and Engineering), Yonsei University
 
 ### v2.0
-- Mingyu Yang (yang926@yonsei.ac.kr), Multi-Physics Modeling and Computation Lab., Yonsei University
+- Mingyu Yang (yang926@yonsei.ac.kr), School of Mathematics and Computing (Computational Science and Engineering), Yonsei University
 - Ji-Hoon Kang (jhkang@kisti.re.kr), Korea Institute of Science and Technology Information
-- Ki-Ha Kim (k-kiha@yonsei.ac.kr), Multi-Physics Modeling and Computation Lab., Yonsei University
-- Jung-Il Choi (jic@yonsei.ac.kr), Multi-Physics Modeling and Computation Lab., Yonsei Universit
+- Ki-Ha Kim (k-kiha@yonsei.ac.kr), School of Mathematics and Computing (Computational Science and Engineering), Yonsei University
+- Jung-Il Choi (jic@yonsei.ac.kr), School of Mathematics and Computing (Computational Science and Engineering), Yonsei University
 
 # Usage
 ## Downloading PaScaL_TDMA
@@ -81,6 +81,10 @@ After building the example file, an executable binary, `a.out`, is built in the 
 	mpirun -np 8 ./a.out ./PARA_INPUT.inp
     ```
 
+## GPU power monitoring
+In the 'example' folder, there is a Python script gpu_power_monitor.py that can be used to monitor and print real-time GPU power usage with timestamps. To use this script, you will need to install the 'pynvml' library.
+
+
 # Folder structure
 * `src` : source files of PaScaL_TDMA_CUDA.
 * `example` : source files of an example problem for 3D heat-transfer equation.
@@ -112,4 +116,4 @@ Please use the following bibtex, when you refer to this project.
 
 
 # References
-For more information, please the reference paper and [Multi-Physics Modeling and Computation Lab.](https://www.mpmc.yonsei.ac.kr/)
+For more information, please the reference paper and [School of Mathematics and Computing (Computational Science and Engineering)](https://www.mpmc.yonsei.ac.kr/)
