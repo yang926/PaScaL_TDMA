@@ -82,7 +82,7 @@ After building the example file, an executable binary, `a.out`, is built in the 
     ```
 
 ## GPU power monitoring
-In the 'example' folder, there is a Python script gpu_power_monitor.py that can be used to monitor and print real-time GPU power usage with timestamps. To use this script, you will need to install the 'pynvml' library.
+In the `example` folder, there is a Python script `gpu_power_monitor.py` that can be used to monitor and print real-time GPU power usage with timestamps. To use this script, you will need to install the `pynvml` library.
 
 
 # Folder structure
