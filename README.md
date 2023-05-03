@@ -31,16 +31,11 @@ In PaScaL_TDMA 2.0, multi-GPU acceleration is implemented using NVIDIA CUDA. CUD
 
 
 # Authors
-### v1.0
-- Ki-Ha Kim (k-kiha@yonsei.ac.kr), School of Mathematics and Computing (Computational Science and Engineering), Yonsei University
-- Ji-Hoon Kang (jhkang@kisti.re.kr), Korea Institute of Science and Technology Information
-- Jung-Il Choi (jic@yonsei.ac.kr), School of Mathematics and Computing (Computational Science and Engineering), Yonsei University
-
-### v2.0
-- Mingyu Yang (yang926@yonsei.ac.kr), School of Mathematics and Computing (Computational Science and Engineering), Yonsei University
-- Ji-Hoon Kang (jhkang@kisti.re.kr), Korea Institute of Science and Technology Information
-- Ki-Ha Kim (k-kiha@yonsei.ac.kr), School of Mathematics and Computing (Computational Science and Engineering), Yonsei University
-- Jung-Il Choi (jic@yonsei.ac.kr), School of Mathematics and Computing (Computational Science and Engineering), Yonsei University
+- Ki-Ha Kim (k-kiha@yonsei.ac.kr), School of Mathematics and Computing (Computational Science and Engineering), Yonsei University (v1.0, v2.0)
+- Ji-Hoon Kang (jhkang@kisti.re.kr), Korea Institute of Science and Technology Information (v1.0, v2.0)
+- Mingyu Yang (yang926@yonsei.ac.kr), School of Mathematics and Computing (Computational Science and Engineering), Yonsei University (v2.0)
+- Oh-Kyoung Kwon (okkwon@kisti.re.kr), Korea Institute of Science and Technology Information (v2.0)
+- Jung-Il Choi (jic@yonsei.ac.kr), School of Mathematics and Computing (Computational Science and Engineering), Yonsei University (v1.0, v2.0)
 
 # Usage
 ## Downloading PaScaL_TDMA
