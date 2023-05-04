@@ -68,7 +68,7 @@ Prerequisites to compile PaScaL_TDMA are as follows:
 	make all
 	```
 ### Mores on compile option
-The `Makefile` in root directory is to compile the source code, and is expected to work for most systems. The 'Makefile.inc' file in the root directory can be used to change the compiler (and MPI wrapper) and a few pre-defined compile options depending on compiler, execution environment and et al.
+The `Makefile` in root directory is to compile the source code, and is expected to work for most systems. The `Makefile.inc` file in the root directory can be used to change the compiler (and MPI wrapper) and a few pre-defined compile options depending on compiler, execution environment and et al.
 
 ## Running the example
 After building the example file, an executable binary, `a.out`, is built in the `run` folder. The `PARA_INPUT.inp` file in the `run` folder is a pre-defined input file, and the `a.out` can be executed as follows:
