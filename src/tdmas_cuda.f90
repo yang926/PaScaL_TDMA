@@ -25,7 +25,7 @@ contains
     !>
     !> @brief   Solve many tridiagonal systems of equations using the Thomas algorithm.
     !>          First & second indices indicate the number of independent many tridiagonal systems for parallelization.
-    !>          Third index indicates the row number in the tridiagonal system .
+    !>          Third index indicates the row number in the tridiagonal system.
     !> @param   a           Coefficient array in lower diagonal elements
     !> @param   b           Coefficient array in diagonal elements
     !> @param   c           Coefficient array in upper diagonal elements
@@ -104,7 +104,7 @@ contains
     !>
     !> @brief   Solve many tridiagonal systems of equations using the Thomas algorithm.
     !>          First & second indices indicate the number of independent many tridiagonal systems for parallelization.
-    !>          Third index indicates the row number in the tridiagonal system .
+    !>          Third index indicates the row number in the tridiagonal system.
     !> @param   a           Coefficient array in lower diagonal elements
     !> @param   b           Coefficient array in diagonal elements
     !> @param   c           Coefficient array in upper diagonal elements

@@ -32,8 +32,8 @@ In PaScaL_TDMA 2.0, multi-GPU acceleration is implemented using NVIDIA CUDA. CUD
 
 # Authors
 - Ki-Ha Kim (k-kiha@yonsei.ac.kr), School of Mathematics and Computing (Computational Science and Engineering), Yonsei University (v1.0, v2.0)
-- Ji-Hoon Kang (jhkang@kisti.re.kr), Korea Institute of Science and Technology Information (v1.0, v2.0)
 - Mingyu Yang (yang926@yonsei.ac.kr), School of Mathematics and Computing (Computational Science and Engineering), Yonsei University (v2.0)
+- Ji-Hoon Kang (jhkang@kisti.re.kr), Korea Institute of Science and Technology Information (v1.0, v2.0)
 - Oh-Kyoung Kwon (okkwon@kisti.re.kr), Korea Institute of Science and Technology Information (v2.0)
 - Jung-Il Choi (jic@yonsei.ac.kr), School of Mathematics and Computing (Computational Science and Engineering), Yonsei University (v1.0, v2.0)
 
@@ -48,9 +48,9 @@ Alternatively, the source files can be downloaded through github menu 'Download 
 
 ## Compile
 ### Prerequisites
-Prerequisites to compile PaScaL_TDMAS are as follows:
+Prerequisites to compile PaScaL_TDMA are as follows:
 * MPI
-* fortran compiler (`nvfortran for GPU runs, NVIDIA HPC SKD 21.1 or higher)
+* fortran compiler (`nvfortran` for GPU runs, NVIDIA HPC SKD 21.1 or higher)
 
 ### Compile and build
 * Build PaScaL_TDMA
@@ -76,15 +76,16 @@ After building the example file, an executable binary, `a.out`, is built in the 
 	mpirun -np 8 ./a.out ./PARA_INPUT.inp
     ```
 ## GPU power monitoring
-In the `example` folder, there is a Python script `gpu_power_monitor.py` that can be used to monitor and print real-time GPU power usage with timestamps. To use this script, you will need to install the `pynvml` library.
+In the `tool` folder, there is a Python script `gpu_power_monitor.py` that can be used to monitor and print real-time GPU power usage with timestamps. To use this script, you will need to install the `pynvml` library.
 
 # Folder structure
-* `src` : source files of PaScaL_TDMA_CUDA.
+* `src` : source files of PaScaL_TDMA 2.0.
 * `example` : source files of an example problem for 3D heat-transfer equation.
 * `include` : header files are created after building
-* `lib` : a static library of PaScaL_TDMA_CUDA is are created after building
+* `lib` : a static library of PaScaL_TDMA 2.0 is are created after building
 * `doc` : documentation
 * `run` : an executable binary file for the example problem is created after building.
+* `tool` : contains useful scripts and tools.
 
 # Cite
 Please use the following bibtex, when you refer to this project.

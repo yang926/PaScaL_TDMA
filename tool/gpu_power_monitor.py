@@ -2,14 +2,12 @@
 ================================================================================
 @file:        gpu_power_monitor.py
 @brief:       Monitors and prints real-time GPU power usage with timestamps.
-@author:      Oh-Kyoung Kwon (okkwon@kisti.re.kr), Korea Institute of Science and Technology Information
-              Mingyu Yang (yang926@yonsei.ac.kr), School of Mathematics and Computing (Computational Science and Engineering), Yonsei University
-              Ji-Hoon Kang (jhkang@kisti.re.kr), Korea Institute of Science and Technology Information
-              Ki-Ha Kim (k-kiha@yonsei.ac.kr), School of Mathematics and Computing (Computational Science and Engineering), Yonsei University
+@author:      Mingyu Yang (yang926@yonsei.ac.kr), School of Mathematics and Computing (Computational Science and Engineering), Yonsei University
+              Oh-Kyoung Kwon (okkwon@kisti.re.kr), Korea Institute of Science and Technology Information
               Jung-Il Choi (jic@yonsei.ac.kr), School of Mathematics and Computing (Computational Science and Engineering), Yonsei University
 @date:        May 2023
 @version:     2.0
-@copyright:   Copyright (c) 2023 Oh-Kyoung Kwon, Mingyu Yang, Ji-Hoon Kang, Ki-Ha Kim, Jung-Il Choi. All rights reserved.
+@copyright:   Copyright (c) 2023 Mingyu Yang, Oh-Kyoung Kwon, Jung-Il Choi. All rights reserved.
 @license:     This project is released under the terms of the MIT License (see LICENSE file).
 ================================================================================
 """
